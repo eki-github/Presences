@@ -34,7 +34,7 @@ presence.on("UpdateData", async () => {
 			largeImageKey: LOGO_URL,
 		},
 		songTitle = document.querySelector<HTMLAnchorElement>(
-			".footerTrackTitleInformationContainer--w2bJS > a"
+			"[data-test='footer-track-title'] > div > a"
 		),
 		currentTime = document
 			.querySelector<HTMLElement>('time[data-test="current-time"]')
@@ -89,7 +89,7 @@ presence.on("UpdateData", async () => {
 			.getAttribute("aria-checked") === "true"
 	) {
 		presenceData.smallImageKey =
-			repeatType === "button__repeatAll" ? "repeat" : "repeat-one";
+			repeatType === "button__repeatAll" ? Assets.Repeat : Assets.RepeatOne;
 		presenceData.smallImageText =
 			repeatType === "button__repeatAll" ? "Playlist on loop" : "On loop";
 
